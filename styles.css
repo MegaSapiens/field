@@ -3,7 +3,7 @@ body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url('field-background.jpg');
+    background-image: url('field-background.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
