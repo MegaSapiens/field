@@ -80,7 +80,7 @@ section {
 
 .field button:hover {
     background-color: #138d75;
-
+}
 /* Подвал */
 footer {
     background-color: rgba(44, 62, 80, 0.8); /* Полупрозрачный темный фон */
