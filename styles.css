@@ -8,7 +8,7 @@ body {
     background-position: center;
     background-attachment: fixed;    
     background-repeat: no-repeat;
-    color: #f0f0f0; /* Светлый серый цвет текста */
+    color: #333;
 }
 
 /* Заголовок */
