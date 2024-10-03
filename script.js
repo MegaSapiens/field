@@ -13,7 +13,7 @@ createButton.addEventListener('click', (event) => {
     // Проверяем, что оба поля заполнены
     if (form1Value.trim() !== '' && form2Value.trim() !== '') {
         // Показываем всплывающее уведомление
-        showNotification('Заявка на создание Иликоина успешно создана!');
+        showNotification('Заявка на создание монеты успешно отправлена валидаторам!');
 
         // Очищаем поля ввода
         document.getElementById('form1').value = '';
