@@ -8,7 +8,7 @@ body {
     background-position: center;
     background-attachment: fixed;    
     background-repeat: no-repeat;
-    color: #333;
+    color: #f0f0f0; /* Светлый серый цвет текста */
 }
 
 /* Заголовок */
@@ -84,7 +84,7 @@ section {
 /* Подвал */
 footer {
     background-color: rgba(44, 62, 80, 0.8); /* Полупрозрачный темный фон */
-    color: #fff;
+    color: #f0f0f0; /* Светлый серый цвет текста */
     text-align: center;
     padding: 10px;
 }
