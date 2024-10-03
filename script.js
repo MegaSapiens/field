@@ -13,14 +13,14 @@ createButton.addEventListener('click', (event) => {
     // Проверяем, что оба поля заполнены
     if (form1Value.trim() !== '' && form2Value.trim() !== '') {
         // Показываем всплывающее уведомление
-        showNotification('Ilicoins created successfully!');
+        showNotification('Заявка на создание Иликоина успешно создана!');
 
         // Очищаем поля ввода
         document.getElementById('form1').value = '';
         document.getElementById('form2').value = '';
     } else {
         // Показываем всплывающее уведомление об ошибке
-        showNotification('Please fill in both fields.', true);
+        showNotification('Пожалуйста, заполните оба поля!', true);
     }
 });
 
