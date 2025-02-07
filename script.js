@@ -56,8 +56,8 @@ function showNotification(message, isError = false) {
     notification.textContent = message;
     document.body.appendChild(notification);
 
-    // Автоматически скрываем уведомление через 3 секунды
+    // Автоматически скрываем уведомление через 5 секунд
     setTimeout(() => {
         notification.remove();
-    }, 3000);
+    }, 5000);
 }
