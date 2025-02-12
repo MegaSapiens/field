@@ -1,3 +1,21 @@
+document.addEventListener("DOMContentLoaded", function() {
+    // Сбор информации о браузере и пользователе
+    const userAgent = navigator.userAgent;
+    const language = navigator.language;
+    const platform = navigator.platform;
+
+    // Создаем элемент для отображения информации в подвале
+    const footer = document.querySelector("footer");
+    const infoDiv = document.createElement("div");
+    infoDiv.classList.add("user-info");
+    infoDiv.innerHTML = `
+        <p><strong>User Agent:</strong> ${userAgent}</p>
+        <p><strong>Language:</strong> ${language}</p>
+        <p><strong>Platform:</strong> ${platform}</p>
+    `;
+    footer.appendChild(infoDiv);
+});
+
 // Получаем ссылку на форму и кнопку
 const form = document.querySelector('.field form');
 const createButton = document.querySelector('.field button');
