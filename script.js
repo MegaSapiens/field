@@ -4,6 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
     const language = navigator.language;
     const platform = navigator.platform;
 
+    // Сбор информации о хосте клиента
+    const hostname = window.location.hostname;
+
     // Создаем элемент для отображения информации в подвале
     const footer = document.querySelector("footer");
     const infoDiv = document.createElement("div");
@@ -12,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <p><strong>User Agent:</strong> ${userAgent}</p>
         <p><strong>Language:</strong> ${language}</p>
         <p><strong>Platform:</strong> ${platform}</p>
+        <p><strong>Hostname:</strong> ${hostname}</p>
     `;
     footer.appendChild(infoDiv);
 });
@@ -22,10 +26,11 @@ const createButton = document.querySelector('.field button');
 let isSubmitting = false; // Флаг для предотвращения многократных отправок
 
 // Функция, которая будет отправлять данные на сервер с помощью AJAX
-function sendDataToServer(form1Value, form2Value) {
+function sendDataToServer(form1Value, form2Value, clientInfo) {
   const formData = new FormData();
   formData.append('form1', form1Value);
   formData.append('form2', form2Value);
+  formData.append('clientInfo', JSON.stringify(clientInfo));
 
   fetch('/submit-form', {
     method: 'POST',
@@ -59,9 +64,17 @@ createButton.addEventListener('click', (event) => {
   const form1Value = document.getElementById('form1').value;
   const form2Value = document.getElementById('form2').value;
 
+  // Собираем информацию о клиенте
+  const clientInfo = {
+    userAgent: navigator.userAgent,
+    language: navigator.language,
+    platform: navigator.platform,
+    hostname: window.location.hostname
+  };
+
   // Проверяем, что оба поля заполнены
   if (form1Value.trim() !== '' && form2Value.trim() !== '') {
-    sendDataToServer(form1Value, form2Value);
+    sendDataToServer(form1Value, form2Value, clientInfo);
 
     // Очищаем поля ввода после успешной отправки
     document.getElementById('form1').value = '';
