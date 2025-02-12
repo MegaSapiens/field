@@ -1,5 +1,6 @@
+
 document.addEventListener("DOMContentLoaded", function() {
-    // Initially hide the header, main content, and footer
+    // Изначально скрываем шапку, основной контент и подвал
     const header = document.querySelector("header");
     const main = document.querySelector("main");
     const footer = document.querySelector("footer");
@@ -11,9 +12,9 @@ document.addEventListener("DOMContentLoaded", function() {
     let timer;
     let showElements = false;
 
-    // Function to show elements after 3 seconds
+    // Функция для отображения элементов через 3 секунды
     function showAfterDelay() {
-        if (showElements) return; // Prevent multiple triggers
+        if (showElements) return; // Предотвращаем многократное срабатывание
         showElements = true;
         clearTimeout(timer);
         timer = setTimeout(() => {
@@ -23,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }, 3000);
     }
 
-    // Event listeners for mouse click and movement
+    // Обработчики событий для кликов мыши и её движения
     document.addEventListener("click", showAfterDelay);
     document.addEventListener("mousemove", showAfterDelay);
 });
