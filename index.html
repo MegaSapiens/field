@@ -6,42 +6,60 @@
     <title>Birthplace of IlI</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/x-icon" href="https://2.gravatar.com/avatar/31b3cda4b6c1276b178cc4637ad58ad91880e5fc741218518c7ed7b49faf5451?size=32">
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        
+    <header class="hidden">
         <img src="https://2.gravatar.com/avatar/31b3cda4b6c1276b178cc4637ad58ad91880e5fc741218518c7ed7b49faf5451?size=128" class="logo" alt="Ilicoins Logo">
         <h1>Welcome to the Birthplace of Ilicoins</h1>
         <h1>Добро пожаловать в месторождение Иликоинов</h1>
     </header>
 
-    <main>
+    <main class="hidden">
         <section class="field">
             <h2>Это поле</h2>
-            <p>Здесь рождаются новые Ilicoin. Введите инфинитив с пояснением, чтобы создать Вашу собственную монету Иликоин(IlI).</p>
+            <p>Здесь рождаются новые Ilicoin. Введите инфинитив с пояснением, чтобы создать Вашу собственную монету Ил�[...]
             <form>
                 <label for="form1">#</label>
                 <input type="text" id="form1" name="form1" required>
-
                 <label for="form2">_</label>
                 <input type="text" id="form2" name="form2" required>
-
                 <button type="submit">или IlI или</button>
             </form>
         </section>
 
         <section class="description">
             <h2>About Ilicoins</h2>
-            <p>Ilicoins are a new type of cryptocurrency that are born in this digital field. The process of creating Ilicoins involves entering specific information into the provided forms and submitting the transaction. Each Ilicoin is unique and represents a piece of the digital landscape.</p>
+            <p>Ilicoins are a new type of cryptocurrency that are born in this digital field. The process of creating Ilicoins involves entering specific information into the provided forms and submit[...]
             <h2>Об Иликоинах</h2>
-            <p>Иликоины — это новые крипто деньги, монеты рожденные в подобном цифровой поле. Процесс создания Ilicoin включает ввод уникальной информации в предоставленные формы с последующей отправкой транзакции. Каждая монета Ilicoin уникальна и представляет собой часть цифрового ландшафта.</p>
+            <p>Иликоины — это новые крипто деньги, монеты рожденные в подобном цифровой поле. Процесс создания Ilicoin [...]
         </section>
     </main>
 
-    <footer>
+    <footer class="hidden">
         <p>&copy; Ilicoins Field</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        let contentRevealed = false;
+
+        function revealContent() {
+            if (!contentRevealed) {
+                setTimeout(() => {
+                    document.querySelector('header').classList.remove('hidden');
+                    document.querySelector('main').classList.remove('hidden');
+                    document.querySelector('footer').classList.remove('hidden');
+                    contentRevealed = true;
+                }, 3000);
+            }
+        }
+
+        document.addEventListener('mousemove', revealContent);
+        document.addEventListener('click', revealContent);
+    </script>
 </body>
 </html>
